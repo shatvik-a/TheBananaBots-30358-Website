@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BananaBots Robotics | FTC Team #30358</title>
+    <meta name="description"
+        content="Official website of BananaBots Robotics - FTC Team #30358. Innovating robotics, AI, autonomous navigation, and STEM outreach.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome / Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Announcement Bar
+    <div class="announcement-bar">
+        <div class="container announcement-content">
+            <span class="badge yellow-badge">2026 SEASON UPDATE</span>
+            <p>🎉 BananaBots qualified for Regional Championship Finals! <a href="#achievements">View Highlights
+                    &rarr;</a></p>
+        </div>
+    </div> -->
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="header">
+        <div class="container header-container">
+            <a href="#" class="brand-logo">
+                <img src="assets/logo.png" alt="BananaBots Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="brand-name">BANANA<span class="yellow-text">BOTS</span></span>
+                    <span class="team-sub">FTC TEAM #30358</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#robot" class="nav-link">The Robot</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#subteams" class="nav-link">Subteams</a>
+                <a href="#outreach" class="nav-link">Outreach</a>
+                <a href="#sponsors" class="nav-link">Sponsors</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#sponsors" class="btn btn-yellow">Sponsor Us</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="tag-dot"></span> FIRST® TECH CHALLENGE TEAM #30358
+                </div>
+                <h1 class="hero-title">
+                    THE FUTURE OF ROBOTICS, <br> <span class="yellow-gradient-text">UNPEELED</span>
+                </h1>
+                <p class="hero-description">
+                    We are The BananaBots, a student-driven middle and high school robotics team dedicated to mechanical
+                    precision,
+                    autonomous computer vision, high-speed control systems, and community STEM empowerment.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#robot" class="btn btn-yellow btn-lg">
+                        <i data-lucide="bot"></i> Explore PEELZ
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-lg">
+                        <i data-lucide="users"></i> Join / Get in Touch
+                    </a>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="90">0</span><span class="stat-plus">%</span>
+                        <span class="stat-label">Autonomous Accuracy</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">People Impacted</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="1">0</span>
+                        <span class="stat-label">Season Active</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="image-wrapper glow-yellow">
+                    <img src="assets/robot.png" alt="BananaBots Offseason Robot PEELZ" class="hero-img">
+                    <div class="visual-badge">
+                        <i data-lucide="zap" class="icon-yellow"></i>
+                        <div>
+                            <strong>PEELZ</strong>
+                            <small>2026 Offseason Robot</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">WHO WE ARE</span>
+                <h2 class="section-title">Driven by Passion, Built for Innovation</h2>
+                <p class="section-desc">
+                    Founded in 2025, The BananaBots bring together passionate middle and high school engineers,
+                    programmers,
+                    and innovators to compete in the FIRST Tech Challenge while spreading STEM excitement locally and
+                    globally.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon"><i data-lucide="cpu"></i></div>
+                    <h3>Precision Hardware</h3>
+                    <p>Custom 3D-printed pattern plates and a 360° turret launcher using AprilTags for tracking.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i data-lucide="code-2"></i></div>
+                    <h3>Autonomous Intelligence</h3>
+                    <p>Limelight & OpenCV vision pipelines, AprilTag odometry, FTC-Dashboard live telemetry, and Pedro
+                        Pathing motion profiling.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i data-lucide="heart-handshake"></i></div>
+                    <h3>Gracious Professionalism</h3>
+                    <p>Fostering teamwork, sharing open-source code and CAD repositories, and supporting STEM community
+                        outreach.</p>
+                </div>
+            </div>
+
+            <!-- Team Image Banner -->
+            <div class="team-banner">
+                <img src="assets/team.png" alt="BananaBots Team Working in Lab" class="banner-img">
+                <div class="banner-overlay">
+                    <h3>Building More Than Robots: Building Leaders.</h3>
+                    <p>Our team works collaboratively in our workshop, combining mechanical design, coding, and
+                        outreach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Robot Specs Section -->
+    <section class="section robot-section" id="robot">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">HARDWARE & SOFTWARE SPECIFICATIONS</span>
+                <h2 class="section-title">Meet PEELZ</h2>
+                <p class="section-desc">Our flagship 2025-2026 offseason robot engineered for speed, accuracy, and
+                    reliability.</p>
+            </div>
+
+            <!-- Robot Specs Interactive Tabs -->
+            <div class="robot-tabs-wrapper">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="mechanics"><i data-lucide="cog"></i> Drive &
+                        Mechanics</button>
+                    <button class="tab-btn" data-tab="autonomous"><i data-lucide="eye"></i> Vision & Auto</button>
+                    <button class="tab-btn" data-tab="electronics"><i data-lucide="zap"></i> Electronics &
+                        Sensors</button>
+                    <button class="tab-btn" data-tab="software"><i data-lucide="terminal"></i> Software Stack</button>
+                </div>
+
+                <div class="tab-content active" id="tab-mechanics">
+                    <div class="tab-grid">
+                        <div class="spec-info">
+                            <h3>High-Speed Mecanum Drivebase</h3>
+                            <p>Equipped with 4x GoBILDA 435 RPM Yellowjacket motors paired with 104mm mecanum wheels,
+                                providing 360° maneuverability with instant acceleration.</p>
+                            <ul class="spec-list">
+                                <li><i data-lucide="check-circle-2"></i> <strong>Frame:</strong> Custom 3D-Printed
+                                    Pattern Plates</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Intake:</strong> High-grip silicone
+                                    compliant roller intake</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Launcher:</strong> 360° Rotating Active
+                                    Turret Launcher</li>
+                            </ul>
+                        </div>
+                        <div class="spec-image">
+                            <img src="assets/robot.png" alt="PEELZ Robot Specs">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-autonomous">
+                    <div class="tab-grid">
+                        <div class="spec-info">
+                            <h3>Sub-Centimeter Odometry & Computer Vision</h3>
+                            <p>Featuring the goBILDA Pinpoint Odometry Computer with 2x 4-bar pods and Limelight 3A
+                                vision pipeline for high-precision localization.</p>
+                            <ul class="spec-list">
+                                <li><i data-lucide="check-circle-2"></i> <strong>Odometry:</strong> goBILDA Pinpoint
+                                    Odometry Computer with 2x 4-Bar Pods</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Vision Engine:</strong> Limelight 3A
+                                    processing high-FPS vision pipelines</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Localization:</strong> High-speed
+                                    hardware odometry & Limelight tag tracking</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Match Performance:</strong> 100 point
+                                    average solo match score</li>
+                            </ul>
+                        </div>
+                        <div class="spec-image">
+                            <div class="code-preview">
+                                <div class="code-header">
+                                    <span class="dot red"></span><span class="dot yellow"></span><span
+                                        class="dot green"></span>
+                                    <span class="code-title">LimelightAutoPipeline.java</span>
+                                </div>
+                                <pre><code>public class BananaLimelightAuto extends LinearOpMode {
+    private Limelight3A limelight;
+    private Follower follower;
+
+    @Override
+    public void runOpMode() {
+        limelight = hardwareMap.get(Limelight3A.class, "limelight");
+        limelight.pipelineSwitch(0);
+        limelight.start();
+
+        follower = new Follower(hardwareMap);
+        waitForStart();
+
+        LLResult result = limelight.getLatestResult();
+        if (result != null && result.isValid()) {
+            // Pedro Pathing Bezier Curve Trajectory
+            Path scoringPath = new Path(
+                new BezierCurve(new Point(startPose), new Point(scorePose))
+            );
+            follower.followPath(scoringPath);
+        }
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-electronics">
+                    <div class="tab-grid">
+                        <div class="spec-info">
+                            <h3>Clean Wiring & Sensor Network</h3>
+                            <p>Built with strict wire routing standards and high-frequency
+                                sensor loops.</p>
+                            <ul class="spec-list">
+                                <li><i data-lucide="check-circle-2"></i> <strong>Brain:</strong> REV Control Hub + REV
+                                    Expansion Hub</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Sensors:</strong> goBILDA Pinpoint and
+                                    Limelight AprilTag tracking</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Power:</strong> 12V NiMH Nested Battery
+                                    (3000mAh, MH-FC XT30 Connector)</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Driver Station:</strong> Logitech F310
+                                    Gamepads paired with Driver Hub</li>
+                            </ul>
+                        </div>
+                        <div class="spec-image">
+                            <div class="telemetry-card">
+                                <h4><i data-lucide="activity" class="yellow-text"></i> Live System Telemetry</h4>
+                                <div class="tele-item"><span>Battery Voltage:</span> <strong>13.4V (Nominal)</strong>
+                                </div>
+                                <div class="tele-item"><span>Loop Execution Speed:</span> <strong>7.2 ms</strong></div>
+                                <div class="tele-item"><span>Heading Error:</span> <strong>0.14°</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-software">
+                    <div class="tab-grid">
+                        <div class="spec-info">
+                            <h3>Open-Source Java Architecture</h3>
+                            <p>Modular state-machine based robot code powered by modern control theory algorithms and
+                                real-time visualization.</p>
+                            <ul class="spec-list">
+                                <li><i data-lucide="check-circle-2"></i> <strong>Control Loops:</strong> PIDF
+                                    controllers with feedforward velocity profiles</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Path Planning:</strong>
+                                    RoadRunner/Pedro Pathing Trajectories</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Live Debugging:</strong> FTC Dashboard
+                                    web server for PID tuning and live graphs</li>
+                                <li><i data-lucide="check-circle-2"></i> <strong>Repository:</strong> Open-source GitHub
+                                    repo with comprehensive documentation</li>
+                            </ul>
+                        </div>
+                        <div class="spec-image">
+                            <div class="github-card">
+                                <i data-lucide="github" class="github-icon"></i>
+                                <p>Public repository containing full autonomous routines and driver
+                                    controls.</p>
+                                <a href="https://github.com/shatvik-a/BananaBots" target="_blank"
+                                    class="btn btn-outline btn-sm">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section achievements-section" id="achievements">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">OUR TRACK RECORD</span>
+                <h2 class="section-title">Awards & Honors</h2>
+                <p class="section-desc">Recognized for technical excellence, team spirit, and community impact.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="badge yellow-badge">2025-26 - DECODE</span>
+                        <h3>4th Place</h3>
+                        <p class="event-name">League Meet 3</p>
+                        <p>Secured 4th place at League Meet 3 with Geary, demonstrating high-speed scoring and
+                            autonomous pathing accuracy.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="badge gray-badge">UPCOMING</span>
+                        <h3>More Coming Soon!</h3>
+                        <p class="event-name">Season Progress</p>
+                        <p>Preparing for upcoming league meets and championships. Stay tuned for future match results
+                            and team updates!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subteams Section -->
+    <section class="section subteams-section" id="subteams">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">TEAM DIVISIONS</span>
+                <h2 class="section-title">How We Operate</h2>
+                <p class="section-desc">BananaBots is structured into specialized subteams mimicking professional
+                    engineering firms.</p>
+            </div>
+
+            <div class="subteams-grid">
+                <div class="subteam-card">
+                    <div class="subteam-icon"><i data-lucide="wrench"></i></div>
+                    <h3>Hardware & CAD</h3>
+                    <p>Designs 3D models in Onshape, operates CNC mills, 3D printers, and assembles robust mechanical
+                        drive systems.</p>
+                    <span class="subteam-tag">Onshape • 3D Printing • Machining</span>
+                </div>
+
+                <div class="subteam-card">
+                    <div class="subteam-icon"><i data-lucide="terminal"></i></div>
+                    <h3>Software & AI</h3>
+                    <p>Develops Java control software, autonomous vision pipelines, PID tuning, and telemetry
+                        diagnostics.</p>
+                    <span class="subteam-tag">Java • Limelight • Pedro Pathing</span>
+                </div>
+
+                <div class="subteam-card">
+                    <div class="subteam-icon"><i data-lucide="megaphone"></i></div>
+                    <h3>Marketing</h3>
+                    <p>Manages team finances, sponsorship acquisition, web development, social media, FLL team
+                        mentorship, and community STEM events.</p>
+                    <span class="subteam-tag">Sponsorships • Web Dev • FLL Mentorship • Demos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outreach Section -->
+    <section class="section outreach-section" id="outreach">
+        <div class="container">
+            <div class="outreach-grid">
+                <div class="outreach-content">
+                    <span class="section-subtitle">GIVING BACK</span>
+                    <h2 class="section-title">Inspiring the Next Generation of Engineers</h2>
+
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <span class="impact-num">500+</span>
+                            <span class="impact-lbl">People Impacted</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-num">45+</span>
+                            <span class="impact-lbl">Hours of Community Service</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-num">2</span>
+                            <span class="impact-lbl">FLL Teams Mentored</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outreach-visual">
+                    <div class="image-wrapper glow-yellow">
+                        <img src="assets/outreach.png" alt="BananaBots STEM Community Outreach">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="section sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">OUR SPONSORS</span>
+                <h2 class="section-title">Support Our Team!</h2>
+                <p class="section-desc">
+                    Building a competitive robot requires parts, tools, registration fees, and travel.
+                    Partner with us to empower young innovators and showcase your brand!
+                </p>
+            </div>
+
+            <!-- Tier Cards -->
+            <div class="tiers-grid">
+                <!-- Silver Tier -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">SILVER SPONSOR</span>
+                        <div class="tier-price">$100+</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li><i data-lucide="check" class="icon-yellow"></i> Logo on Website & Team Portfolio</li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> Social Media Shoutouts</li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> Team Thank You Plaque</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">Sponsor Silver</a>
+                </div>
+
+                <!-- Gold Tier -->
+                <div class="tier-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="tier-header">
+                        <span class="tier-name">GOLD SPONSOR</span>
+                        <div class="tier-price">$250+</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li><i data-lucide="check" class="icon-yellow"></i> Everything in Silver</li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> <strong>Medium Logo on Robot Frame</strong>
+                        </li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> Logo on Team Shirts</li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> Display at Pit Station</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-yellow btn-block">Sponsor Gold</a>
+                </div>
+
+                <!-- Platinum Tier -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">BANANA PLATINUM</span>
+                        <div class="tier-price">$500+</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li><i data-lucide="check" class="icon-yellow"></i> Everything in Gold</li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> <strong>Prominent Large Logo on
+                                Robot</strong></li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> VIP Competition Match Access</li>
+                        <li><i data-lucide="check" class="icon-yellow"></i> Private Team Robot Demonstration</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">Sponsor Platinum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Join Us Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-subtitle">GET IN TOUCH</span>
+                    <h2 class="section-title">Want to Join, Sponsor, or Collaborate?</h2>
+                    <p class="section-desc">
+                        Whether you are a student looking to join the team, an engineer wanting to mentor,
+                        or a sponsor interested in supporting STEM education, we'd love to connect with you!
+                    </p>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i data-lucide="mail" class="yellow-icon"></i>
+                            <div>
+                                <strong>Email Us</strong>
+                                <p><a href="mailto:thebananabots.atx@gmail.com"
+                                        class="yellow-text">thebananabots.atx@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="map-pin" class="yellow-icon"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Austin, Texas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send Us a Message!</h3>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="e.g. Alex Johnson">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="alex@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Inquiry Type</label>
+                            <select id="interest" required>
+                                <option value="Sponsorship">Sponsorship Opportunity</option>
+                                <option value="Join Team">Student Application / Joining Team</option>
+                                <option value="Mentorship">Mentorship / Volunteer</option>
+                                <option value="Outreach">STEM Workshop Request</option>
+                                <option value="General">General Question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" required
+                                placeholder="Tell us how we can help or collaborate..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-yellow btn-block">
+                            <i data-lucide="send"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="brand-logo">
+                    <img src="assets/logo.png" alt="BananaBots Logo" class="logo-img">
+                    <span class="brand-name">BANANA<span class="yellow-text">BOTS</span></span>
+                </a>
+                <p>FTC Robotics Team #30358. Innovating technology and inspiring future STEM leaders.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#about">About Team</a>
+                <a href="#robot">PEELZ Robot</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#sponsors">Sponsors</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Previous Seasons</h4>
+                <a href="https://www.gearchaeologists.com/" target="_blank">2025-2026 DECODE</a>
+            </div>
+
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-btn-group">
+                    <a href="https://github.com/shatvik-a/BananaBots" target="_blank" class="social-pill-btn github">
+                        <img src="assets/icon_github.png" alt="GitHub Logo" class="brand-icon-img">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.youtube.com/@TheBananaBots" target="_blank" class="social-pill-btn youtube">
+                        <img src="assets/icon_youtube.png" alt="YouTube Logo" class="brand-icon-img">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="showToast('📸 Instagram page coming soon!')"
+                        class="social-pill-btn instagram">
+                        <img src="assets/icon_instagram.png" alt="Instagram Logo" class="brand-icon-img">
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
