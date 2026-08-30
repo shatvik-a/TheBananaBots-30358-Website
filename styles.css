@@ -1197,6 +1197,13 @@ h6 {
     transform: translateX(4px);
 }
 
+.social-pill-btn.discord:hover {
+    border-color: #8B97F0;
+    color: #8B97F0;
+    box-shadow: 0 0 12px rgba(139, 151, 240, 0.4);
+    transform: translateX(4px);
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 20px 0;
