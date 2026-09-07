@@ -653,7 +653,8 @@ h6 {
     font-size: 0.95rem;
 }
 
-.spec-list li i {
+.spec-list li i,
+.spec-list li svg {
     color: var(--yellow-primary);
     margin-top: 3px;
     flex-shrink: 0;
@@ -1168,6 +1169,7 @@ h6 {
 }
 
 .social-pill-btn i,
+.social-pill-btn svg,
 .brand-icon-img {
     width: 30px;
     height: 30px;
@@ -1219,7 +1221,7 @@ h6 {
     bottom: 30px;
     right: 30px;
     z-index: 9999;
-
+    pointer-events: none;
 }
 
 .toast {
@@ -1233,7 +1235,7 @@ h6 {
     align-items: center;
     gap: 12px;
     animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
+    pointer-events: auto;
 }
 
 @keyframes slideUp {
@@ -1326,5 +1328,86 @@ h6 {
     .subteams-grid,
     .tiers-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   Entrance Animations System (Scroll Reveal)
+   ========================================================================== */
+
+.reveal-fade-up {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    will-change: opacity;
+}
+
+.reveal-scale-up {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-slide-right {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-slide-left {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-visible {
+    opacity: 1 !important;
+    transform: none;
+}
+
+/* Stagger Delays */
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-fade-up,
+    .reveal-fade-in,
+    .reveal-scale-up,
+    .reveal-slide-right,
+    .reveal-slide-left {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }

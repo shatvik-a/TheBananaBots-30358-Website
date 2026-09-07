@@ -1,45 +1,73 @@
 // Initialize Lucide Icons
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    if (window.lucide) {
+        try {
+            lucide.createIcons();
+        } catch (e) {
+            console.error('Lucide error:', e);
+        }
+    }
     initCounters();
     initTabs();
     initMobileNav();
     initContactForm();
     initScrollSpy();
+    initScrollAnimations();
 });
 
 // Animated Counter Effect
 function initCounters() {
     const statNumbers = document.querySelectorAll('.stat-number');
+    if (!statNumbers.length) return;
+
     let animated = false;
+
+    const startAnimation = () => {
+        if (animated) return;
+        animated = true;
+
+        const duration = 1800; // ms
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth ease-out cubic curve
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'), 10) || 0;
+                const current = Math.floor(easeProgress * target);
+                stat.textContent = current;
+            });
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'), 10) || 0;
+                    stat.textContent = target;
+                });
+            }
+        }
+
+        requestAnimationFrame(update);
+    };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !animated) {
-                animated = true;
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-target'));
-                    const duration = 1800; // ms
-                    const step = Math.max(1, Math.floor(target / (duration / 16)));
-                    let current = 0;
-
-                    const timer = setInterval(() => {
-                        current += step;
-                        if (current >= target) {
-                            stat.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            stat.textContent = current;
-                        }
-                    }, 16);
-                });
+            if (entry.isIntersecting) {
+                startAnimation();
+                observer.disconnect();
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
     const statsSection = document.querySelector('.hero-stats');
     if (statsSection) {
         observer.observe(statsSection);
+    } else {
+        startAnimation();
     }
 }
 
@@ -169,7 +197,13 @@ function showToast(message) {
     toast.innerHTML = `<i data-lucide="check-circle" class="icon-yellow"></i> <span>${message}</span>`;
 
     container.appendChild(toast);
-    lucide.createIcons();
+    if (window.lucide) {
+        try {
+            lucide.createIcons();
+        } catch (e) {
+            console.error('Lucide error in toast:', e);
+        }
+    }
 
     setTimeout(() => {
         toast.style.opacity = '0';
@@ -201,4 +235,56 @@ function initScrollSpy() {
             }
         });
     });
+}
+
+// Scroll Entrance Animations (Scroll Reveal)
+function initScrollAnimations() {
+    const autoRevealTargets = [
+        { selector: '.hero-tag', anim: 'reveal-fade-up', delay: 0 },
+        { selector: '.hero-title', anim: 'reveal-fade-up', delay: 1 },
+        { selector: '.hero-description', anim: 'reveal-fade-up', delay: 2 },
+        { selector: '.hero-actions', anim: 'reveal-fade-up', delay: 3 },
+        { selector: '.hero-img-wrapper', anim: 'reveal-scale-up', delay: 2 },
+        { selector: '.section-header', anim: 'reveal-fade-up', delay: 0 },
+        { selector: '.about-card', anim: 'reveal-fade-up', stagger: true },
+        { selector: '.stat-card', anim: 'reveal-scale-up', stagger: true },
+        { selector: '.subteam-card', anim: 'reveal-fade-up', stagger: true },
+        { selector: '.tier-card', anim: 'reveal-fade-up', stagger: true },
+        { selector: '.timeline-item', anim: 'reveal-slide-right', stagger: true },
+        { selector: '.contact-card', anim: 'reveal-slide-right', delay: 0 },
+        { selector: '.contact-form', anim: 'reveal-slide-left', delay: 1 },
+        { selector: '.github-card', anim: 'reveal-scale-up', delay: 0 }
+    ];
+
+    autoRevealTargets.forEach(target => {
+        const elements = document.querySelectorAll(target.selector);
+        elements.forEach((el, index) => {
+            if (!el.classList.contains('reveal-visible')) {
+                el.classList.add(target.anim);
+                const delayIndex = target.stagger ? (index % 5) + 1 : (target.delay || 0);
+                if (delayIndex > 0) {
+                    el.classList.add(`delay-${delayIndex}`);
+                }
+            }
+        });
+    });
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const revealables = document.querySelectorAll(
+        '.reveal-fade-up, .reveal-fade-in, .reveal-scale-up, .reveal-slide-right, .reveal-slide-left'
+    );
+    revealables.forEach(el => observer.observe(el));
 }
