@@ -55,6 +55,7 @@
                 <a href="#subteams" class="nav-link">Subteams</a>
                 <a href="#outreach" class="nav-link">Outreach</a>
                 <a href="#sponsors" class="nav-link">Sponsors</a>
+                <a href="#links" class="nav-link">Helpful Links</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
@@ -498,6 +499,313 @@
         </div>
     </section>
 
+    <!-- Helpful Links & Resources Section -->
+    <section class="section links-section" id="links">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">KNOWLEDGE BASE & ESSENTIAL LINKS</span>
+                <h2 class="section-title">Helpful <span class="yellow-gradient-text">Resources</span> & Links</h2>
+                <p class="section-desc">
+                    Curated FTC documentation, software libraries, team repositories, CAD files, learning tools, and
+                    official FIRST portals all in one place.
+                </p>
+            </div>
+
+            <!-- Search Bar & Category Filters -->
+            <div class="links-controls-wrapper" style="margin: 0 auto 40px auto;">
+                <div class="search-box-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="linkSearchInput" class="search-input"
+                        placeholder="Search resources by title, topic, or keyword (e.g. Pedro, GitHub, Java, CAD)...">
+                    <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="category-pills" id="categoryPills">
+                    <button class="pill-btn active" data-category="all">
+                        <i data-lucide="grid"></i> All Links (<span id="count-all">0</span>)
+                    </button>
+                    <button class="pill-btn" data-category="cad">
+                        <i data-lucide="box"></i> CAD (<span id="count-cad">0</span>)
+                    </button>
+                    <button class="pill-btn" data-category="coding">
+                        <i data-lucide="code"></i> Coding (<span id="count-coding">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Access Official Channels -->
+            <div class="quick-grid" style="margin-bottom: 40px;">
+                <a href="https://github.com/shatvik-a/BananaBots" target="_blank" class="quick-card github-quick">
+                    <div class="quick-card-icon">
+                        <img src="assets/icon_github.png" alt="GitHub" class="quick-brand-icon">
+                    </div>
+                    <div class="quick-card-content">
+                        <h3>Team GitHub</h3>
+                        <p>Access our open-source autonomous & teleop codebase, Pedro Pathing configs, and libraries.
+                        </p>
+                    </div>
+                    <div class="quick-card-action">
+                        <span>Visit Repo</span> <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@TheBananaBots" target="_blank" class="quick-card youtube-quick">
+                    <div class="quick-card-icon">
+                        <img src="assets/icon_youtube.png" alt="YouTube" class="quick-brand-icon">
+                    </div>
+                    <div class="quick-card-content">
+                        <h3>YouTube Channel</h3>
+                        <p>Watch match recordings, robot reveal videos, autonomous testing clips, and CAD walkthroughs.
+                        </p>
+                    </div>
+                    <div class="quick-card-action">
+                        <span>Subscribe</span> <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="https://discord.gg/pGneJ7jWX" target="_blank" class="quick-card discord-quick">
+                    <div class="quick-card-icon">
+                        <img src="assets/icon_discord.png" alt="Discord" class="quick-brand-icon">
+                    </div>
+                    <div class="quick-card-content">
+                        <h3>Discord Server</h3>
+                        <p>Join our community server for technical discussions, strategy sharing, and outreach events.
+                        </p>
+                    </div>
+                    <div class="quick-card-action">
+                        <span>Join Server</span> <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/thebananabots/" target="_blank" class="quick-card instagram-quick">
+                    <div class="quick-card-icon">
+                        <img src="assets/icon_instagram.png" alt="Instagram" class="quick-brand-icon">
+                    </div>
+                    <div class="quick-card-content">
+                        <h3>Instagram</h3>
+                        <p>Follow our build season behind-the-scenes, competition updates, and outreach photos.</p>
+                    </div>
+                    <div class="quick-card-action">
+                        <span>Follow Us</span> <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results-box hidden">
+                <i data-lucide="search-x" class="no-results-icon"></i>
+                <h3>No Matching Resources Found</h3>
+                <p>Try searching for different keywords like "Java", "Pedro", "goBILDA", "Manual", or reset filters.</p>
+                <button id="resetSearchBtn" class="btn btn-yellow">Reset Search & Filters</button>
+            </div>
+
+            <!-- Categorized Resources List Container -->
+            <div class="resource-directory-list" id="resourceDirectoryList">
+                <!-- CATEGORY GROUP 1: CAD -->
+                <div class="category-group" data-category-group="cad">
+                    <div class="group-header">
+                        <div class="group-title-row">
+                            <i data-lucide="box" class="group-icon"></i>
+                            <div>
+                                <h3>CAD:</h3>
+                                <p class="group-subtitle">3D CAD design software, tutorials, official team models, and drivetrain guides.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group-list-items">
+                        <!-- ITEM 1: Onshape -->
+                        <div class="resource-item-row" data-category="cad" data-tags="cad onshape 3d design software">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="box" class="item-type-icon"></i>
+                                    <h4 class="item-title">Onshape</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">Onshape</span>
+                                        <span class="tag">3D CAD</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Cloud-native 3D CAD modeling platform for FTC robot design and assembly.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://www.onshape.com/en/" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://www.onshape.com/en/" target="_blank" class="btn-item-link">
+                                    <span>Visit Onshape</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 2: Simple Cad Airplane tutorial -->
+                        <div class="resource-item-row" data-category="cad" data-tags="cad simple airplane tutorial youtube video beginner">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="youtube" class="item-type-icon"></i>
+                                    <h4 class="item-title">Simple Cad Airplane tutorial</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">Tutorial</span>
+                                        <span class="tag">CAD Basics</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Beginner-friendly video playlist tutorial demonstrating CAD modeling step-by-step.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://www.youtube.com/playlist?list=PL92ZgDzlhlZbRe82YQM0nHvPI5mq1bvAP" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://www.youtube.com/playlist?list=PL92ZgDzlhlZbRe82YQM0nHvPI5mq1bvAP" target="_blank" class="btn-item-link">
+                                    <span>Watch Tutorial</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 3: BananaBots CAD -->
+                        <div class="resource-item-row" data-category="cad" data-tags="cad bananabots official robot onshape model 3d">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="box" class="item-type-icon"></i>
+                                    <h4 class="item-title">BananaBots CAD</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">BananaBots</span>
+                                        <span class="tag">Onshape CAD</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Official 3D Onshape CAD document and assembly for BananaBots robot design.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://cad.onshape.com/documents/fb16d6bcec7ab123d8c733d3/w/e3c69b52c9c79d6e085994b1/e/bc9486bb3be5959ac2564f40" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://cad.onshape.com/documents/fb16d6bcec7ab123d8c733d3/w/e3c69b52c9c79d6e085994b1/e/bc9486bb3be5959ac2564f40" target="_blank" class="btn-item-link">
+                                    <span>View CAD Document</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 4: Basic FTC drivetrain in CAD -->
+                        <div class="resource-item-row" data-category="cad" data-tags="cad basic ftc drivetrain tutorial youtube video chassis">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="youtube" class="item-type-icon"></i>
+                                    <h4 class="item-title">Basic FTC drivetrain in CAD</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">FTC Drivetrain</span>
+                                        <span class="tag">CAD Guide</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Video tutorial guiding how to design and assemble a basic FTC robot drivetrain in CAD.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://www.youtube.com/watch?v=XBhhm_aR9Os&t=11s" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://www.youtube.com/watch?v=XBhhm_aR9Os&t=11s" target="_blank" class="btn-item-link">
+                                    <span>Watch Video</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY GROUP 2: Coding -->
+                <div class="category-group" data-category-group="coding">
+                    <div class="group-header">
+                        <div class="group-title-row">
+                            <i data-lucide="code" class="group-icon"></i>
+                            <div>
+                                <h3>Coding:</h3>
+                                <p class="group-subtitle">FTC SDK, team codebase repositories, and Java programming tutorials.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group-list-items">
+                        <!-- ITEM 5: FTC SDK -->
+                        <div class="resource-item-row" data-category="coding" data-tags="coding ftc sdk github robot controller java official">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="github" class="item-type-icon"></i>
+                                    <h4 class="item-title">FTC SDK</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">FTC SDK</span>
+                                        <span class="tag">FIRST Official</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Official FIRST Tech Challenge Robot Controller repository for Android Studio Java development.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://github.com/FIRST-Tech-Challenge/FTCRobotController" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://github.com/FIRST-Tech-Challenge/FTCRobotController" target="_blank" class="btn-item-link">
+                                    <span>Open GitHub Repo</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 6: Bananabots Java -->
+                        <div class="resource-item-row" data-category="coding" data-tags="coding bananabots java github codebase autonomous opmode">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="github" class="item-type-icon"></i>
+                                    <h4 class="item-title">Bananabots Java</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">BananaBots</span>
+                                        <span class="tag">Java Codebase</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Primary GitHub repository for BananaBots FTC robot controller, autonomous programs, and teleop code.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://github.com/shatvik-a/BananaBots" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://github.com/shatvik-a/BananaBots" target="_blank" class="btn-item-link">
+                                    <span>Open Repository</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 7: Simple Java Coding -->
+                        <div class="resource-item-row" data-category="coding" data-tags="coding simple java coding tutorial youtube video beginner">
+                            <div class="item-bullet-dash">-</div>
+                            <div class="item-main-info">
+                                <div class="item-title-row">
+                                    <i data-lucide="youtube" class="item-type-icon"></i>
+                                    <h4 class="item-title">Simple Java Coding</h4>
+                                    <div class="card-tags">
+                                        <span class="tag">Java Tutorial</span>
+                                        <span class="tag">Beginner Code</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Beginner-friendly video guide explaining basic Java programming for robotics.</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="copy-btn" data-url="https://www.youtube.com/watch?v=elMbAQSU34&t=1s" title="Copy Link">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                                <a href="https://www.youtube.com/watch?v=elMbAQSU34&t=1s" target="_blank" class="btn-item-link">
+                                    <span>Watch Video</span> <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Contact & Join Us Section -->
     <section class="section contact-section" id="contact">
         <div class="container">
@@ -581,6 +889,7 @@
                 <a href="#robot">PEELZ Robot</a>
                 <a href="#achievements">Achievements</a>
                 <a href="#sponsors">Sponsors</a>
+                <a href="#links">Helpful Links & Resources</a>
             </div>
 
             <div class="footer-links">
