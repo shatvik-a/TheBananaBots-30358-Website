@@ -1540,6 +1540,7 @@ h6 {
 .pill-btn i {
     width: 16px;
     height: 16px;
+    display: inline-block;
 }
 
 .pill-btn:hover {
@@ -1954,6 +1955,7 @@ h6 {
     width: 26px;
     height: 26px;
     min-width: 26px;
+    display: inline-block;
     color: var(--yellow-primary);
 }
 
@@ -2038,6 +2040,7 @@ h6 {
     width: 18px;
     height: 18px;
     min-width: 18px;
+    display: inline-block;
     color: var(--yellow-primary);
 }
 
